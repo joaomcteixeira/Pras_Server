@@ -1092,10 +1092,10 @@ void AddMissingHydrogenAtons::cystine_h(Residue &res, Residue &res_p, vector<Res
 void AddMissingHydrogenAtons::his_note(string resNo, string chainID)
     {
         resNo.erase(remove_if(resNo.begin(),resNo.end(),::isspace),resNo.end());
-        ofstream file("log.txt", ios_base::app);
-        file<<"HIS No."<< resNo <<" in chain"
-             <<chainID<< " is protonated (+1 charge)";
-        file<<"(ref @ www.protein-science.com).\n\n";
+        //ofstream file("log.txt", ios_base::app);
+        //file<<"HIS No."<< resNo <<" in chain"
+        //     <<chainID<< " is protonated (+1 charge)";
+        //file<<"(ref @ www.protein-science.com).\n\n";
     }
 
 void AddMissingHydrogenAtons::get_hd1(vector<Residue> &HIS, vector<Residue> &chains)

@@ -94,7 +94,7 @@ int main(int argc, char** argv)
 			     }
 		   }
 		}
-	if (log.empty()) remove("log.txt");
+	//if (log.empty()) remove("log.txt");
 	char ftype = PDB.back();
 	if ((PDB,faspr,rotamer,mutation,ligand,addh,prot,ss).empty()) goto ERR;
 	if (ftype=='b'||ftype=='t')PRAS.getChains(PDB,"nofaspr",rotamer,mutation,ligand);

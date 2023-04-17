@@ -19,12 +19,12 @@ IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 void CheckMissingAtoms::repairNotes(string num, string id, vector<string> v)
     {
     	num.erase(remove_if(num.begin(),num.end(),::isspace),num.end());
-        ofstream file("log.txt", ios_base::app);
-        ostream_iterator<string> cout_it(file, " ");
-        file<<"Residue No."<< num <<" in chain "
-             <<id<< " has missing atom(s) [";
-             copy(v.begin(), v.end(), cout_it);
-        file<<"]. We have fixed it.\n\n";
+        //ofstream file("log.txt", ios_base::app);
+        //ostream_iterator<string> cout_it(file, " ");
+        //file<<"Residue No."<< num <<" in chain "
+        //     <<id<< " has missing atom(s) [";
+        //     copy(v.begin(), v.end(), cout_it);
+        //file<<"]. We have fixed it.\n\n";
     }
 
 void CheckMissingAtoms::missing_backbone(string num, string id)
@@ -56,13 +56,13 @@ void CheckMissingAtoms::cite_pras(string fname)
 
 int CheckMissingAtoms::FixHeavyAtoms(string fname)
 	{
-	CheckMissingAtoms::cite_pras(fname);
-	if (faspr.empty())
-		{
-			ofstream file("log.txt", ios_base::app);
-			file<<"No FASPR output PDB supplied. Default chi will be used\n\n";
-		}
-	cout<<"\n**Now checking and fixing missing heavy atoms..."<<endl;
+	//CheckMissingAtoms::cite_pras(fname);
+	//if (faspr.empty())
+		//{
+			//ofstream file("log.txt", ios_base::app);
+			//file<<"No FASPR output PDB supplied. Default chi will be used\n\n";
+		//}
+	//cout<<"\n**Now checking and fixing missing heavy atoms..."<<endl;
     for (int i= 0; i<chains.size(); i++)
             {
 			    if (chains[i].res_type == "ASP")
@@ -85,7 +85,7 @@ int CheckMissingAtoms::FixHeavyAtoms(string fname)
 			            		{
 			            			if ( l == "N" || l == "CA" || l == "C")
 				            			{
-				            				missing_backbone(chains[i].res_num, chains[i].c_id);
+				            				//missing_backbone(chains[i].res_num, chains[i].c_id);
 				            				exit(1);
 				            			}
 			            		}
@@ -112,7 +112,7 @@ int CheckMissingAtoms::FixHeavyAtoms(string fname)
 			            		{
 			            			if ( l == "N" || l == "CA" || l == "C")
 				            			{
-				            				missing_backbone(chains[i].res_num, chains[i].c_id);
+				            				//missing_backbone(chains[i].res_num, chains[i].c_id);
 				            				exit(1);
 				            			}
 			            		}
@@ -139,7 +139,7 @@ int CheckMissingAtoms::FixHeavyAtoms(string fname)
 			            		{
 			            			if ( l == "N" || l == "CA" || l == "C")
 				            			{
-				            				missing_backbone(chains[i].res_num, chains[i].c_id);
+				            				//missing_backbone(chains[i].res_num, chains[i].c_id);
 				            				exit(1);
 				            			}
 			            		}
@@ -166,7 +166,7 @@ int CheckMissingAtoms::FixHeavyAtoms(string fname)
 			            		{
 			            			if ( l == "N" || l == "CA" || l == "C")
 				            			{
-				            				missing_backbone(chains[i].res_num, chains[i].c_id);
+				            				//missing_backbone(chains[i].res_num, chains[i].c_id);
 				            				exit(1);
 				            			}
 			            		}
@@ -193,7 +193,7 @@ int CheckMissingAtoms::FixHeavyAtoms(string fname)
 			            		{
 			            			if ( l == "N" || l == "CA" || l == "C")
 				            			{
-				            				missing_backbone(chains[i].res_num, chains[i].c_id);
+				            				//missing_backbone(chains[i].res_num, chains[i].c_id);
 				            				exit(1);
 				            			}
 			            		}
@@ -220,7 +220,7 @@ int CheckMissingAtoms::FixHeavyAtoms(string fname)
 			            		{
 			            			if ( l == "N" || l == "CA" || l == "C")
 				            			{
-				            				missing_backbone(chains[i].res_num, chains[i].c_id);
+				            				//missing_backbone(chains[i].res_num, chains[i].c_id);
 				            				exit(1);
 				            			}
 			            		}
@@ -247,7 +247,7 @@ int CheckMissingAtoms::FixHeavyAtoms(string fname)
 			            		{
 			            			if ( l == "N" || l == "CA" || l == "C")
 				            			{
-				            				missing_backbone(chains[i].res_num, chains[i].c_id);
+				            				//missing_backbone(chains[i].res_num, chains[i].c_id);
 				            				exit(1);
 				            			}
 			            		}
@@ -274,7 +274,7 @@ int CheckMissingAtoms::FixHeavyAtoms(string fname)
 			            		{
 			            			if ( l == "N" || l == "CA" || l == "C")
 				            			{
-				            				missing_backbone(chains[i].res_num, chains[i].c_id);
+				            				//missing_backbone(chains[i].res_num, chains[i].c_id);
 				            				exit(1);
 				            			}
 			            		}
@@ -301,7 +301,7 @@ int CheckMissingAtoms::FixHeavyAtoms(string fname)
 			            		{
 			            			if ( l == "N" || l == "CA" || l == "C")
 				            			{
-				            				missing_backbone(chains[i].res_num, chains[i].c_id);
+				            				//missing_backbone(chains[i].res_num, chains[i].c_id);
 				            				exit(1);
 				            			}
 			            		}
@@ -328,7 +328,7 @@ int CheckMissingAtoms::FixHeavyAtoms(string fname)
 			            		{
 			            			if ( l == "N" || l == "CA" || l == "C")
 				            			{
-				            				missing_backbone(chains[i].res_num, chains[i].c_id);
+				            				//missing_backbone(chains[i].res_num, chains[i].c_id);
 				            				exit(1);
 				            			}
 			            		}
@@ -356,7 +356,7 @@ int CheckMissingAtoms::FixHeavyAtoms(string fname)
 			            		{
 			            			if ( l == "N" || l == "CA" || l == "C")
 				            			{
-				            				missing_backbone(chains[i].res_num, chains[i].c_id);
+				            				//missing_backbone(chains[i].res_num, chains[i].c_id);
 				            				exit(1);
 				            			}
 			            		}
@@ -383,7 +383,7 @@ int CheckMissingAtoms::FixHeavyAtoms(string fname)
 			            		{
 			            			if ( l == "N" || l == "CA" || l == "C")
 				            			{
-				            				missing_backbone(chains[i].res_num,chains[i].c_id);
+				            				//missing_backbone(chains[i].res_num,chains[i].c_id);
 				            				exit(1);
 				            			}
 			            		}
@@ -410,7 +410,7 @@ int CheckMissingAtoms::FixHeavyAtoms(string fname)
 			            		{
 			            			if ( l == "N" || l == "CA" || l == "C")
 				            			{
-				            				missing_backbone(chains[i].res_num, chains[i].c_id);
+				            				//missing_backbone(chains[i].res_num, chains[i].c_id);
 				            				exit(1);
 				            			}
 			            		}
@@ -437,7 +437,7 @@ int CheckMissingAtoms::FixHeavyAtoms(string fname)
 			            		{
 			            			if ( l == "N" || l == "CA" || l == "C")
 				            			{
-				            				missing_backbone(chains[i].res_num, chains[i].c_id);
+				            				//missing_backbone(chains[i].res_num, chains[i].c_id);
 				            				exit(1);
 				            			}
 			            		}
@@ -464,7 +464,7 @@ int CheckMissingAtoms::FixHeavyAtoms(string fname)
 			            		{
 			            			if ( l == "N" || l == "CA" || l == "C")
 				            			{
-				            				missing_backbone(chains[i].res_num, chains[i].c_id);
+				            				//missing_backbone(chains[i].res_num, chains[i].c_id);
 				            				exit(1);
 				            			}
 			            		}
@@ -491,7 +491,7 @@ int CheckMissingAtoms::FixHeavyAtoms(string fname)
 			            		{
 			            			if ( l == "N" || l == "CA" || l == "C")
 				            			{
-				            				missing_backbone(chains[i].res_num, chains[i].c_id);
+				            				//missing_backbone(chains[i].res_num, chains[i].c_id);
 				            				exit(1);
 				            			}
 			            		}
@@ -518,7 +518,7 @@ int CheckMissingAtoms::FixHeavyAtoms(string fname)
 			            		{
 			            			if ( l == "N" || l == "CA" || l == "C")
 				            			{
-				            				missing_backbone(chains[i].res_num, chains[i].c_id);
+				            				//missing_backbone(chains[i].res_num, chains[i].c_id);
 				            				exit(1);
 				            			}
 			            		}
@@ -545,7 +545,7 @@ int CheckMissingAtoms::FixHeavyAtoms(string fname)
 			            		{
 			            			if ( l == "N" || l == "CA" || l == "C")
 				            			{
-				            				missing_backbone(chains[i].res_num, chains[i].c_id);
+				            				//missing_backbone(chains[i].res_num, chains[i].c_id);
 				            				exit(1);
 				            			}
 			            		}
@@ -572,7 +572,7 @@ int CheckMissingAtoms::FixHeavyAtoms(string fname)
 			            		{
 			            			if ( l == "N" || l == "CA" || l == "C")
 				            			{
-				            				missing_backbone(chains[i].res_num, chains[i].c_id);
+				            				//missing_backbone(chains[i].res_num, chains[i].c_id);
 				            				exit(1);
 				            			}
 			            		}
@@ -599,7 +599,7 @@ int CheckMissingAtoms::FixHeavyAtoms(string fname)
 			            		{
 			            			if ( l == "N" || l == "CA" || l == "C")
 				            			{
-				            				missing_backbone(chains[i].res_num, chains[i].c_id);
+				            				//missing_backbone(chains[i].res_num, chains[i].c_id);
 				            				exit(1);
 				            			}
 			            		}
